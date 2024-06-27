@@ -1,0 +1,36 @@
+
+body {
+    background-color: rgb(208, 239, 249);
+    font-family: Arial, sans-serif;
+}
+.header{
+    margin-left: 20px;
+}
+header{
+    display: flex;
+    flex-direction: row;
+}
+.form-container {
+    margin-left: 20px;
+    padding: 5px;
+    max-width: 300px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, select, button {
+    margin-bottom: 5px;
+    padding: 4px;
+    font-size: 16px;
+}
+button {
+    background-color: gold;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: rgb(226, 193, 5);
+}
