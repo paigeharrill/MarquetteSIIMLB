@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,22 +10,30 @@
     <div class="header">
         <h1>Marquette University - Team Liquid Biopsy</h1>
     </div>
-    <div class="form-container">
-        <form>
-            <label for="patient-name">Patient Name:</label>
-            <input type="text" id="patient-name" name="patient-name" required><br>
-            <label for="patient-id">Patient ID:</label>
-            <input type="text" id="patient-id" name="patient-id" required><br>
-            <label for="disease">What test do you suspect would be appropriate?:</label>
-            <select id="disease" name="disease" required>
-                <option value="disease0">Please Select One</option>
-                <option value="disease1">Liquid Biopsy</option>
-                <option value="disease2">Basic Metabolic Panel</option>
-                <option value="disease3">Blood Glucose Test</option>
-                <!-- Add more options as needed -->
-            </select><br>
-            <button type="submit">Generate Results</button>
-        </form>
+    <div class="container">
+        <div class="form-container">
+            <h2>Patient Info</h2>
+            <form id="patient-form">
+                <label for="patient-name">Patient Name:</label>
+                <input type="text" id="patient-name" name="patient-name" required><br>
+
+                <label for="patient-id">Patient ID:</label>
+                <input type="text" id="patient-id" name="patient-id" required><br>
+
+                <label for="disease">What test is ordered?</label>
+                <select id="disease" name="disease" required>
+                    <option value="disease1">Please select one</option>
+                    <option value="Immunotherapy Viability Test">Immunotherapy viability test</option>
+                    <!-- Add more options as needed -->
+                </select><br>
+
+                <button type="button" id="generate-results-button">Check FDA Label</button>
+            </form>
+        </div>
+        <div class="result-container" id="result-container">
+            <!-- Results will appear here -->
+        </div>
     </div>
+    <script src="js/scripts.js"></script>
 </body>
 </html>

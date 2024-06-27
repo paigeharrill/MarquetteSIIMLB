@@ -1,36 +1,107 @@
-
 body {
-    background-color: rgb(208, 239, 249);
     font-family: Arial, sans-serif;
-}
-.header{
-    margin-left: 20px;
-}
-header{
+    background-color: lightcyan;
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.header {
+    background-color: gold;
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
 .form-container {
-    margin-left: 20px;
-    padding: 5px;
+    padding: 20px;
     max-width: 300px;
 }
+
+.result-container {
+    padding: 20px;
+    max-width: 300px;
+    border-left: 1px solid #ccc;
+}
+
 form {
     display: flex;
     flex-direction: column;
 }
 
+label {
+    margin-bottom: 5px;
+}
+
 input, select, button {
     margin-bottom: 5px;
-    padding: 4px;
+    padding: 8px;
     font-size: 16px;
 }
+
 button {
     background-color: gold;
     color: black;
     border: none;
     cursor: pointer;
 }
+
 button:hover {
-    background-color: rgb(226, 193, 5);
+    background-color: goldenrod;
 }
+
+.checklist-item {
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.green {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.red {
+    background-color: #f44336;
+    color: white;
+}
+
+.final-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: darkcyan;
+    border-radius: 5px;
+}
+
