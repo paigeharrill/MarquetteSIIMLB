@@ -34,13 +34,12 @@ function generateResults() {
 
     // Checklist items
     const checklistItems = [
-        'High PD-L1 expression',
-        'High tumor mutational burden (TMB)',
-        'Positive immune-related gene-expression signatures',
-        'Presence of microsatellite instability (MSI)',
-        'Balanced and diverse TCR repertoire with activated CD4+ memory T cells',
-        'Normal plasma protein expression profiles',
-        'Minimal pre-existing comorbidities'
+        'PD-L1 Levels High',
+        'TP53 Mutation',
+        'ERBB2 Mutation',
+        'BRAF Mutation',
+        'CDKN2A Mutation',
+        'CTNNB1 Mutation',
     ];
 
     let passCount = 0; // To count the number of passing tests

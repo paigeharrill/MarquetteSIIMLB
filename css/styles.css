@@ -19,7 +19,6 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
 .header {
     background-color: gold;
     color: black;
@@ -47,8 +46,7 @@ h1 {
     padding: 20px;
     max-width: 300px;
     border-left: 1px solid #ccc;
-    min-height: 400px; /* Ensures enough height for the content */
-    position: relative; /* Allows absolute positioning of the final message */
+    min-height: 400px;
 }
 
 form {
@@ -101,10 +99,5 @@ button:hover {
     color: white;
     background-color: darkcyan;
     border-radius: 5px;
-    position: absolute;
-    bottom: 20px; /* Positions the message above the bottom */
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 40px); /* Ensures the message is centered and not too wide */
+    margin-top: 20px;
 }
-
