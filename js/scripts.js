@@ -34,13 +34,16 @@ function generateResults() {
 
     // Checklist items
     const checklistItems = [
-        'TP53',
-        'KRAS',
-        'ERBB2',
-        'BRAF',
-        'CDKN2A',
-        'CTNNB1'
+        'High PD-L1 expression',
+        'High tumor mutational burden (TMB)',
+        'Positive immune-related gene-expression signatures',
+        'Presence of microsatellite instability (MSI)',
+        'Balanced and diverse TCR repertoire with activated CD4+ memory T cells',
+        'Normal plasma protein expression profiles',
+        'Minimal pre-existing comorbidities'
     ];
+
+    let passCount = 0; // To count the number of passing tests
 
     // Function to update the checklist item
     function updateChecklistItem(item, index) {
@@ -52,17 +55,18 @@ function generateResults() {
             checklistDiv.classList.add(isPass ? 'green' : 'red');
             resultContainer.appendChild(checklistDiv);
 
-            if(!isPass){
-                allTestsPassed = false;
+            if (isPass) {
+                passCount++;
             }
 
-            if(index == checklistItems.length - 1){
+            // If it's the last item, show the final message
+            if (index === checklistItems.length - 1) {
                 const finalMessage = document.createElement('div');
                 finalMessage.className = 'final-message';
-                finalMessage.textContent = allTestsPassed ? 'Patient qualifies for Immunotherapy' : 'Patient does not qualify for Immunotherapy';
-                resultContainer.appendChild(finalMessage);
+                finalMessage.textContent = passCount >= 2 ? 'Immunotherapy is a viable option' : 'Immunotherapy is not a viable option';
+                resultContainer.appendChild(finalMessage); // Append to the result container
             }
-        }, index * 1000); // Delay of 5 seconds between each item
+        }, index * 2000); // Delay of 2 seconds between each item
     }
 
     // Generate the checklist items with delay

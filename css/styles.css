@@ -47,6 +47,8 @@ h1 {
     padding: 20px;
     max-width: 300px;
     border-left: 1px solid #ccc;
+    min-height: 400px; /* Ensures enough height for the content */
+    position: relative; /* Allows absolute positioning of the final message */
 }
 
 form {
@@ -92,10 +94,6 @@ button:hover {
 }
 
 .final-message {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
     padding: 10px;
     font-size: 18px;
     font-weight: bold;
@@ -103,5 +101,10 @@ button:hover {
     color: white;
     background-color: darkcyan;
     border-radius: 5px;
+    position: absolute;
+    bottom: 20px; /* Positions the message above the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px); /* Ensures the message is centered and not too wide */
 }
 
