@@ -32,6 +32,7 @@ function generateResults() {
                          <p>Test Order: ${disease}</p>`;
     resultContainer.appendChild(infoDiv);
 
+    
     // Checklist items
     const checklistItems = [
         'PD-L1 Levels High',
@@ -46,26 +47,28 @@ function generateResults() {
 
     // Function to update the checklist item
     function updateChecklistItem(item, index) {
+        const delay = (index + 1) * 1000;
         setTimeout(() => {
             const checklistDiv = document.createElement('div');
             checklistDiv.className = 'checklist-item';
             checklistDiv.textContent = item;
-            const isPass = Math.random() > 0.5; // Randomly determine if the test passes or fails
-            checklistDiv.classList.add(isPass ? 'green' : 'red');
-            resultContainer.appendChild(checklistDiv);
 
-            if (isPass) {
-                passCount++;
+            if (index === 0) {
+                checklistDiv.classList.add('green'); // First item green
+                passCount += 1; // Increment the pass count
+            } else {
+                checklistDiv.classList.add('red'); // Rest items red
             }
 
-            // If it's the last item, show the final message
+            resultContainer.appendChild(checklistDiv);
+
             if (index === checklistItems.length - 1) {
                 const finalMessage = document.createElement('div');
                 finalMessage.className = 'final-message';
-                finalMessage.textContent = passCount >= 2 ? 'Immunotherapy is a viable option' : 'Immunotherapy is not a viable option';
+                finalMessage.textContent = passCount >= 1 ? 'Immunotherapy is a viable option' : 'Immunotherapy is not a viable option';
                 resultContainer.appendChild(finalMessage); // Append to the result container
             }
-        }, index * 2000); // Delay of 2 seconds between each item
+        }, delay); // Delay of a second between each item
     }
 
     // Generate the checklist items with delay
